@@ -1,0 +1,170 @@
+﻿@model WebApplication11.Models.SURVIEILLANCE
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+ 
+
+<main id="main" class="main">
+
+    <div class="pagetitle" style="width:fit-content">
+
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">DEVICES</li>
+                <li class="breadcrumb-item active">Details</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+
+
+
+        <div class="card" style="width:100%;align-content:center">
+            <div class="card-body" style="align-self:center;align-items:center;width:90%">
+                <h5 class="card-title">Details</h5>
+
+
+
+                <div>
+                    <h4>SURVIEILLANCE</h4>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Code)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Code)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Model)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Model)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Type)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Type)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Serial_Number)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Serial_Number)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Internail_Ip)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Internail_Ip)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Externail_IP)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Externail_IP)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Port_number)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Port_number)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.DVR_NVR_MODEL)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.DVR_NVR_MODEL)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.NUMBER_OF_CHANNEL)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.NUMBER_OF_CHANNEL)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.USED_CHANNEL)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.USED_CHANNEL)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.CONECTIVETY_TYPE)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.CONECTIVETY_TYPE)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.STORAGE)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.STORAGE)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.USER_LOGIN)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.USER_LOGIN)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.PASSWORD)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.PASSWORD)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.VERIFICATION_CODE)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.VERIFICATION_CODE)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.is_warehouse)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.is_warehouse)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Note)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Note)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.BRANCH)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.BRANCH.Name)
+                        </dd>
+                        <dt class="col-sm-4">
+                            WAREHOUSE STOCK FOR CAMRA&DVR
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.WAREHOUSE_STOCK_FOR_CAMRA_DVR.Name)
+                        </dd>
+                    </dl>
+                </div>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-sim bttn btn-outline-primary" style="margin-left:6cm">Edit</a> 
+                    <a asp-action="Index" class="btn btn-sim btn btn-outline-dark">Back to List</a>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </section>
+
+</main><!-- End #main -->

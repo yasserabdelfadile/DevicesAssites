@@ -1,0 +1,90 @@
+﻿@model WebApplication11.Models.BRANCH
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle" style="width:fit-content">
+
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Branch</li>
+                <li class="breadcrumb-item active">Create</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        
+
+                <div class="card" style="width:100%">
+                    <div class="card-body" style="align-self:center;width:80%">
+                        <h5 class="card-title">Create</h5>
+                        @*<div class="row">*@
+                        @*<div class="col-md-4">*@
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="CODE" class="control-label"></label>
+                                <input asp-for="CODE" class="form-control" />
+                                <span asp-validation-for="CODE" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ADDRESS" class="control-label"></label>
+                                <input asp-for="ADDRESS" class="form-control" />
+                                <span asp-validation-for="ADDRESS" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PHONE" class="control-label"></label>
+                                <input asp-for="PHONE" class="form-control" />
+                                <span asp-validation-for="PHONE" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="EMAIL" class="control-label"></label>
+                                <input asp-for="EMAIL" class="form-control" />
+                                <span asp-validation-for="EMAIL" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="OPEN_DATE" class="control-label"></label>
+                                <input asp-for="OPEN_DATE" class="form-control" />
+                                <span asp-validation-for="OPEN_DATE" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="NOTE" class="control-label"></label>
+                                <textarea asp-for="NOTE" class="form-control" ></textarea>
+                                <span asp-validation-for="NOTE" class="text-danger"></span>
+                            </div>
+                           @* <div class="form-group">
+                                <label asp-for="DESCRPTION" class="control-label"></label>
+                                <input asp-for="DESCRPTION" class="form-control" />
+                                <span asp-validation-for="DESCRPTION" class="text-danger"></span>
+                            </div>*@
+                            <div class="form-group" style="align-self:center">
+                                <input type="submit" value="Create" class="btn  btn-sim btn btn-outline-success" style="margin-left:6cm" />
+                                <a asp-action="Index" class="btn btn-sim btn-outline-dark">Back to List</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            
+    </section>
+
+</main><!-- End #main -->
+@*@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}*@

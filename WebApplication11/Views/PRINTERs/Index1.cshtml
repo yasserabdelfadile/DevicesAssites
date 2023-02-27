@@ -1,0 +1,135 @@
+﻿@model IEnumerable<WebApplication11.Models.PRINTER>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@{
+    int x = 1;
+}
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle" style="width:fit-content">
+
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Componnent</li>
+                <li class="breadcrumb-item active">Printer</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row-cols-xxl-9" style="width:max-content">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Printer</h5>
+
+
+
+                        <p> <a asp-action="Create" class="btn btn-sim btn btn-outline-success   bi bi-plus-lg"></a></p>
+                        <p>
+                            @if (TempData["AlertMessage"] != null)
+                            {
+                                 <div class="alert alert-success alert-dismissible">
+                                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong>Success!</strong> @TempData["AlertMessage"]
+                                </div>
+
+                            }
+                        </p>
+                        <table class="mytab table  table-hover table-responsive table-striped navbar-nav-scroll" id="mytab">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                       Code
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Name)
+                                    </th>
+                                  
+                                    <th>
+                                        Type
+                                    </th>
+                                    <th>
+                                        Serial Number
+                                    </th>
+                                    <th>
+                                      Note
+                                    </th>
+                                   
+                                    <th>
+                                        Branch
+                                    </th>
+                                    <th>
+                                        Department
+                                    </th>
+                                    <th>
+                                      Is Warehouse)]
+                                    </th>
+                                    <th>
+                                        Warehouse Stock
+                                    </th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@x</td><td>
+                                            @Html.DisplayFor(modelItem => item.CODE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Name)
+                                        </td>
+                                        
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TYPE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.SERIAL_NUMBER)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NOTE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.BRANCH.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DEPARTMENT.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Is_Warehouse)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.WAREHOUSE_STOCK.Name)
+                                        </td>
+                                        <td>  <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm  btn btn-outline-primary ri-edit-2-line"></a></td>
+                                        <td> <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn btn btn-outline-secondary bx bx-message-alt-detail"></a></td>
+                                        <td> <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn btn-outline-danger  bi bi-trash"></a></td>
+
+                                    </tr>
+                                    { x = x + 1; }
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</main><!-- End #main -->

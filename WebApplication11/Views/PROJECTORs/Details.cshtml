@@ -1,0 +1,102 @@
+﻿@model WebApplication11.Models.PROJECTOR
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle" style="width:fit-content">
+
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item">Componnent</li>
+                <li class="breadcrumb-item active">Details</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+
+
+
+        <div class="card" style="width:100%;align-content:center">
+            <div class="card-body" style="align-self:center;align-items:center;width:90%">
+                <h5 class="card-title">Details</h5>
+
+
+                <div>
+                    <h4>Projector</h4>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.CODE)
+                        </dt>
+                        <dd class="col-sm-7">
+                            @Html.DisplayFor(model => model.CODE)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+                        <dd class="col-sm-7">
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+                      
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.TYPE)
+                        </dt>
+                        <dd class="col-sm-7">
+                            @Html.DisplayFor(model => model.TYPE)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.SERIAL_NUMBER)
+                        </dt>
+                        <dd class="col-sm-7">
+                            @Html.DisplayFor(model => model.SERIAL_NUMBER)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.IS_Warehouse)
+                        </dt>
+                        <dd class="col-sm-7">
+                            @Html.DisplayFor(model => model.IS_Warehouse)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.NOTE)
+                        </dt>
+                        <dd class="col-sm-7">
+                            @Html.DisplayFor(model => model.NOTE)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.BRANCH)
+                        </dt>
+                        <dd class="col-sm-7">
+                            @Html.DisplayFor(model => model.BRANCH.Name)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.WAREHOUSE_STOCK)
+                        </dt>
+                        <dd class="col-sm-7">
+                            @Html.DisplayFor(model => model.WAREHOUSE_STOCK.Name)
+                        </dd>
+                    </dl>
+                </div>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model?.Id"class="btn btn-sim btn btn-outline-primary" style="margin-left:6cm">Edit</a>
+                    <a asp-action="Index" class="btn btn-sim btn btn-outline-dark">Back to List</a>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+    </section>
+
+</main><!-- End #main -->

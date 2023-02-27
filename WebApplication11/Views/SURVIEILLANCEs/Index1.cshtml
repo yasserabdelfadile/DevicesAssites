@@ -1,0 +1,195 @@
+﻿@model IEnumerable<WebApplication11.Models.SURVIEILLANCE>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    int x = 1;
+}
+
+<main id="main" class="main">
+
+    <div class="pagetitle" style="width:fit-content">
+
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Main Devices</li>
+                <li class="breadcrumb-item active">Survieillance</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row-cols-xxl-9" style="width:max-content">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Survieillance</h5>
+
+
+
+                        <p> <a asp-action="Create" class="btn btn-sim btn btn-outline-success   bi bi-plus-lg"></a></p>
+                         <p>
+                            @if (TempData["AlertMessage"] != null)
+                            {
+                                 <div class="alert alert-success alert-dismissible">
+                                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong>Success!</strong> @TempData["AlertMessage"]
+                                </div>
+
+                            }
+                        </p>
+                        <table class="mytab table  table-hover table-responsive table-striped navbar-nav-scroll" id="mytab">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Code)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Model)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Type)
+                                    </th>
+                                    <th>
+                                        Serial Number
+                                    </th>
+                                    <th>
+                                        Internail IP
+                                    </th>
+                                    <th>
+                                        Externail IP
+                                    </th>
+                                    <th>
+                                        Port Number
+                                    </th>
+                                    <th>
+                                        DVR&NVR Model
+                                    </th>
+                                    <th>
+                                        Number OF Channel
+                                    </th>
+                                    <th>
+                                        Used Channel
+                                    </th>
+                                    <th>
+                                        Conectivety Type
+                                    </th>
+                                    <th>
+                                        Storage
+                                    </th>
+                                    <th>
+                                        User Login
+                                    </th>
+                                    <th>
+                                        Password
+                                    </th>
+                                    <th>
+                                        Verifaction Code
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Note)
+                                    </th>
+                                    <th>
+                                        Branch
+                                    </th>
+                                    <th>
+                                       IS Warehouse
+                                    </th>
+                                    <th>
+                                        WAREHOUSE STOCK FOR CAMRA&DVR)
+                                    </th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@x</td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Model)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Type)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Serial_Number)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Internail_Ip)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Externail_IP)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Port_number)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DVR_NVR_MODEL)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NUMBER_OF_CHANNEL)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.USED_CHANNEL)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CONECTIVETY_TYPE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.STORAGE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.USER_LOGIN)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PASSWORD)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.VERIFICATION_CODE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Note)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.BRANCH.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.is_warehouse)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.WAREHOUSE_STOCK_FOR_CAMRA_DVR.Name)
+                                        </td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm  btn btn-outline-primary ri-edit-2-line"></a>
+                                        </td>
+                                        <td>  <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn btn btn-outline-secondary bx bx-message-alt-detail"></a> </td>
+                                        <td> <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn btn-outline-danger  bi bi-trash"></a></td>
+
+                                    </tr>
+                                    { x = x + 1; }
+                                }
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</main><!-- End #main -->

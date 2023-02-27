@@ -1,0 +1,182 @@
+﻿@model WebApplication11.Models.DEVICES
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle" style="width:fit-content">
+
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">DEVICES</li>
+                <li class="breadcrumb-item active">Create</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+
+
+
+        <div class="card" style="width:100%;align-content:center">
+            <div class="card-body" style="align-self:center;align-items:center;width:90%">
+                <h5 class="card-title">Details</h5>
+
+ 
+                <div>
+                    <h4>DEVICES</h4>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.CODE)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.CODE)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.TYPE)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.TYPE)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.MODEL_NO)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.MODEL_NO)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.SERIAL_NO)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.SERIAL_NO)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.PROCESSOR)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.PROCESSOR)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.RAME_SIZE)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.RAME_SIZE)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.QUANTITY)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.QUANTITY)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.BUS_SPEED)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.BUS_SPEED)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.RAM_GENERATION)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.RAM_GENERATION)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.HDD)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.HDD)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.SDD_NVME)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.SDD_NVME)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.MOINTOR_BRANCH_INCH)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.MOINTOR_BRANCH_INCH)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.BIOS_VERSION)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.BIOS_VERSION)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.WINDOWS)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.WINDOWS)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.RECIVED_DEVICE_DATE)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.RECIVED_DEVICE_DATE)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.RE_RECIVED_DEVICE_DATE)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.RE_RECIVED_DEVICE_DATE)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.Is_Warehouse)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.Is_Warehouse)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.NOTE)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.NOTE)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.EMPLOYEE)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.EMPLOYEE.Name)
+                        </dd>
+                        <dt class="col-sm-5">
+                            @Html.DisplayNameFor(model => model.WAREHOUSE_STOCK)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.WAREHOUSE_STOCK.Name)
+                        </dd>
+                    </dl>
+                </div>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model?.ID" class="btn btn-sim btn btn-outline-success" style="margin-left:6cm">Edit</a> 
+                    <a asp-action="Index" class="btn btn-sim btn-outline-dark">Back to List</a>
+                </div>
+
+               
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </section>
+
+</main><!-- End #main -->

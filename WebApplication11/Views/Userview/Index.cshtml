@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Userviewcs>
+
+@{
+    ViewData["Tital"] ="Users";
+}
+ 
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle" style="width:fit-content">
+    </div><!-- End Page Title -->
+
+    <section class="section">
+
+
+
+        <div class="card" style="width:100%;align-content:center">
+            <div class="card-body" style="align-self:center;align-items:center;width:90%;align-content:center">
+                <h5 class="card-title">Users </h5>
+
+
+                <div>
+                    <table class="table table-striped mt-4">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>@item.Email</td>
+                                    <td>@string.Join(",",item.Roles.ToList())</td>
+                                    <td>
+                                        <a class="btn btn-primary" asp-controller="Userview" asp-action="ManageRole" asp-route-userId="@item.Id">Manage Roles</a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </section>
+
+</main><!-- End #main -->

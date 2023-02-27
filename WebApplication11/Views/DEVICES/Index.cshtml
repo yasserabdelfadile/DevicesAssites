@@ -1,0 +1,231 @@
+﻿@model IEnumerable<WebApplication11.Models.DEVICES>
+
+ 
+  
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    int X = 1;
+}
+
+
+
+
+
+
+
+
+<main id="main" class="main" style=" ">
+
+    <div class="pagetitle" style="width:max-content">
+        <h1>Main Devices</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item">Main Devices</li>
+                <li class="breadcrumb-item active">DEVICES</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            @*<div class="col-lg-6">
+
+
+
+            </div>*@
+           
+            <div class="col-lg-6">
+               
+                <div class="card" style="width:max-content">
+                    <div class="card-body">
+                        <h5 class="card-title">Devices</h5>
+                        <p >  
+                            @if (TempData["AlertMessage"] != null)
+                            {
+                                <div class="alert alert-success alert-dismissible">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong>Success!</strong> @TempData["AlertMessage"]
+                                </div>
+
+                            }
+                        </p>
+                            @*  this for search  *@
+                         @*   @using (Html.BeginForm("Index", "Devices", FormMethod.Get))
+                            {
+                                <div style=" ">
+                                    @Html.TextBox("searchString")
+                                    <input id="submit1" type="submit" value="Search"  class="bi bi-filter" />
+                                </div>
+                            }*@
+
+                        
+                        <p>  <a asp-action="Create" class="btn btn-sim btn btn-outline-success   bi bi-plus-lg"> </a> </p>
+                        <!-- Table with stripped rows -->
+                        <table class="mytab table  table-hover table-responsive table-striped navbar-nav-scroll" id="mytab">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col"> @*@Html.DisplayNameFor(model => model.CODE)*@
+                                        @*@Html.ActionLink("CODE","Index","Devices",new{sortOrder=ViewBag.CODESortParm})*@
+                                        Code
+                                    </th>
+                                    <th scope="col">
+                                        @*@Html.ActionLink("Name","Index","Devices",new{sortOrder=ViewBag.NameSortParm})*@
+                                        Name
+                                    </th>
+                                    <th scope="col">
+                                        @*@Html.ActionLink("TYPE","Index","Devices",new{sortOrder=ViewBag.TYPESortParm})*@
+                                        Type
+                                    </th>
+                                    <th scope="col">
+                                        @*@Html.ActionLink("MODEL.NO","Index","Devices",new{sortOrder=ViewBag.MODEL_NOSortParm})*@
+                                        Model No
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("SERIAL.NO","Index","Devices",new{sortOrder=ViewBag.SERIAL_NOSortParm})*@
+                                        Serial No
+
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("PROCESSOR","Index","Devices",new{sortOrder=ViewBag.PROCESSORSortParm})*@
+                                        Processor
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("Rame Size","Index","Devices",new{sortOrder=ViewBag.RAME_SIZESortParm})*@
+                                        Rame Size
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("Quantity","Index","Devices",new{sortOrder=ViewBag.QUANTITYSortParm})*@
+                                        Quantity
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("Bus Speed","Index","Devices",new{sortOrder=ViewBag.BUS_SPEEDSortParm})*@
+                                        Bus Speed
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("Ram Generation","Index","Devices",new{sortOrder=ViewBag.RAM_GENERATIONSortParm})*@
+                                        Ram Generation
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("HDD","Index","Devices",new{sortOrder=ViewBag.HDDSortParm})*@
+                                        HDD
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("SDD&Nvme","Index","Devices",new{sortOrder=ViewBag.SDD_NVMESortParm})*@
+                                        SDD&Nvme
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("Mointor Branch&Inch","Index","Devices",new{sortOrder=ViewBag.MOINTOR_BRANCH_INCHSortParm})*@
+                                        Mointor Branch&Inch
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("BIOS VERSION","Index","Devices",new{sortOrder=ViewBag.BIOS_VERSIONSortParm})*@
+                                        Bios Version
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("WINDOWS","Index","Devices",new{sortOrder=ViewBag.WINDOWSSortParm})*@
+                                        Windows
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("RECIVED DEVICE DATE","Index","Devices",new{sortOrder=ViewBag.RECIVED_DEVICE_DATESortParm})*@
+                                       Received Date
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("RE@RECIVED@DEVICE DATE","Index","Devices",new{sortOrder=ViewBag.RE_RECIVED_DEVICE_DATESortParm})*@
+                                        Delivery Date
+                                    </th>
+                                    <th>
+                                        @*@Html.ActionLink("ARE_WAREHOUSTOCK","Index","Devices",new{sortOrder=ViewBag.ARE_WAREHOUSTOCKSortParm})*@
+                                        Is warehouse
+                                    </th>
+                                    <th>
+                                        Note
+                                    </th>
+                                    <th>
+                                        EMPLOYEE
+                                    </th>
+                                    <th>
+                                        Branch
+                                    </th>
+                                    <th>Department</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@X</th>
+                                        <td>  @Html.DisplayFor(modelItem => item.CODE) </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.Name)  </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.TYPE)   </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.MODEL_NO) </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.SERIAL_NO)</td>
+                                        <td>  @Html.DisplayFor(modelItem => item.PROCESSOR)   </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.RAME_SIZE)  </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.QUANTITY)   </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.BUS_SPEED)   </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.RAM_GENERATION)     </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.HDD)       </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.SDD_NVME)       </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.MOINTOR_BRANCH_INCH)     </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.BIOS_VERSION)     </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.WINDOWS)  </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.RECIVED_DEVICE_DATE)   </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.RE_RECIVED_DEVICE_DATE)  </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.Is_Warehouse) </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.NOTE) </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.EMPLOYEE.Name)   </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.EMPLOYEE.BRANCH.Name)  </td>
+                                        <td>  @Html.DisplayFor(modelItem => item.EMPLOYEE.DEPARTMENT.Name)  </td>
+                                        <td>  <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-sm  btn btn-outline-primary ri-edit-2-line"></a>  </td>
+                                        <td>  <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-sm btn btn btn-outline-secondary bx bx-message-alt-detail"></a>  </td>
+                                        <td>  <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-sm btn btn-outline-danger  bi bi-trash"></a> </td>
+                                    </tr>
+                                    { X += 1; }
+                                }
+                            </tbody>
+                        </table>
+                        <!-- End Table with stripped rows -->
+                       @* <div>
+
+                            @Html.PagedListPager(Model,page=>Url.Action("Index",new{page ,CurentFilter=ViewBag.CurentFilter}))
+                            <a asp-action="Index" asp-route-pageNumber="1"  ><</a>
+                            @if ((@Model.PageNumber - 1) <= 0)
+                            {
+                                <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber)" >prv</a>
+                            }
+                            @if ((@Model.PageNumber - 1) > 0)
+                            {
+                                <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber-1)" >prv</a>
+                            }
+
+                            @if (((@Model.PageNumber + 1)) <= @Model.PageCount)
+                            {
+                                <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber+1)" >next</a>
+                            }
+                            @if ((@Model.PageNumber + 1) > @Model.PageCount)
+                            {
+                                <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber)" >next</a>
+
+                            }
+
+                            <a asp-action="Index" asp-route-pageNumber="@((Model.PageCount)) " class="align-center " >></a>
+                            <b style="color:#4154f1"> page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)of @Model.PageCount </b>
+
+                        </div>*@
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

@@ -1,0 +1,176 @@
+﻿@model WebApplication11.Models.DEVICES
+
+  
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+
+
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle" style="width:fit-content">
+
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">DEVICES</li>
+                <li class="breadcrumb-item active">Create</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row-cols-xxl-9" style="width:max-content">
+            <div class="col-lg-12">
+
+                <div class="card" style="width:120%;align-content:center">
+                    <div class="card-body" style="width:max-content;align-self:center">
+                        <h5 class="card-title">Create</h5>
+
+
+                        <div>
+                            <form asp-action="Create" style="width:100%">
+
+                                <div class="col-xl-12" style="width:50%;float:left;padding:10px;align-content:center">
+
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-group">
+                                        <label  class="control-label">Code</label>
+                                        <input asp-for="CODE" class="form-control" />
+                                        <span asp-validation-for="CODE" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  class="control-label">Name</label>
+                                        <input asp-for="Name" class="form-control" />
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label   class="control-label">Type</label>
+                                        <input asp-for="TYPE" class="form-control" />
+                                        <span asp-validation-for="TYPE" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label   class="control-label">Model No</label>
+                                        <input asp-for="MODEL_NO" class="form-control" />
+                                        <span asp-validation-for="MODEL_NO" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label   class="control-label">Serial No</label>
+                                        <input asp-for="SERIAL_NO" class="form-control" />
+                                        <span asp-validation-for="SERIAL_NO" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label   class="control-label">Processor</label>
+                                        <input asp-for="PROCESSOR" class="form-control" />
+                                        <span asp-validation-for="PROCESSOR" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label   class="control-label">Ram Size</label>
+                                        <input asp-for="RAME_SIZE" class="form-control" />
+                                        <span asp-validation-for="RAME_SIZE" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label   class="control-label">Quantity</label>
+                                        <input asp-for="QUANTITY" class="form-control" />
+                                        <span asp-validation-for="QUANTITY" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label   class="control-label">Bus Speed</label>
+                                        <input asp-for="BUS_SPEED" class="form-control" />
+                                        <span asp-validation-for="BUS_SPEED" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label   class="control-label">Ram Generation</label>
+                                        <input asp-for="RAM_GENERATION" class="form-control" />
+                                        <span asp-validation-for="RAM_GENERATION" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12" style="width:50%;float:right;padding:10px;justify-content:left">
+                                    <div class="form-group">
+                                        <label asp-for="HDD" class="control-label"></label>
+                                        <input asp-for="HDD" class="form-control" />
+                                        <span asp-validation-for="HDD" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label    class="control-label">SDD&Nvme</label>
+                                        <input asp-for="SDD_NVME" class="form-control" />
+                                        <span asp-validation-for="SDD_NVME" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label   class="control-label">Mointor Branch&Inch</label>
+                                        <input asp-for="MOINTOR_BRANCH_INCH" class="form-control" />
+                                        <span asp-validation-for="MOINTOR_BRANCH_INCH" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label   class="control-label">Bios Version</label>
+                                        <input asp-for="BIOS_VERSION" class="form-control" />
+                                        <span asp-validation-for="BIOS_VERSION" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  class="control-label">Windows</label>
+                                        <input asp-for="WINDOWS" class="form-control" />
+                                        <span asp-validation-for="WINDOWS" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Received Date</label>
+                                        <input asp-for="RECIVED_DEVICE_DATE" class="form-control" />
+                                        <span asp-validation-for="RECIVED_DEVICE_DATE" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Delivery Date</label>
+                                        <input asp-for="RE_RECIVED_DEVICE_DATE" class="form-control" />
+                                        <span asp-validation-for="RE_RECIVED_DEVICE_DATE" class="text-danger"></span>
+                                    </div>
+                                     <div class="form-group form-check">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" asp-for="Is_Warehouse" />  Is Warehouse
+                                            </label>
+                                     </div>
+                                    <div class="form-group">
+                                        <label   class="control-label">Note</label>
+                                        <textarea asp-for="NOTE" class="form-control" ></textarea>
+                                        <span asp-validation-for="NOTE" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label   class="control-label">Employee</label>
+                                        <select asp-for="EMPLOYEE_ID" class="form-control" asp-items="ViewBag.EMPLOYEE_ID"></select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label   class="control-label">Warehouse Stock</label>
+                                        <select asp-for="WAREHOUSE_STOCK_ID" class="form-control" asp-items="ViewBag.WAREHOUSE_STOCK_ID"></select>
+                                    </div>
+                                </div>
+
+                                <div style="margin-top:1cm">
+                                    <input type="submit" value="Create" class="btn btn-sim btn btn-outline-primary" style="margin-right:3px" /><a asp-action="Index" class="btn btn-sim btn btn-outline-dark">Back to List</a>
+                                </div>
+                               
+                            </form> 
+                           
+                        </div>
+                
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</main><!-- End #main -->
+
+
+ @section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

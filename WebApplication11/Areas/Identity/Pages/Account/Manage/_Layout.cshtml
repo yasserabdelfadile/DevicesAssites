@@ -1,0 +1,49 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout) && parentLayout !=  null)
+    {
+        Layout = parentLayout.ToString();
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
+}
+
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle" style="width:fit-content">
+
+
+    </div><!-- End Page Title -->
+
+    <section class="section">
+
+
+
+        <div class="card" style="width:110%;align-content:center">
+            <div class="card-body" style="align-self:center;align-items:center;width:100%;align-content:center">
+                <h5 class="card-title">Manage your account</h5>
+                <div>
+                    <h2>Change your account settings</h2>
+                    <hr />
+                   
+                        <div class="col-md-4 align-center" style="align-content:center;">
+                            <partial name="_ManageNav" />
+                        </div>
+                        <div class="col-md-12" style="margin-left:7cm">
+                            @RenderBody()
+                        </div>
+                   
+                </div>
+             </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
+
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

@@ -1,0 +1,149 @@
+﻿@model WebApplication11.Models.SURVIEILLANCE
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle" style="width:fit-content">
+
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">DEVICES</li>
+                <li class="breadcrumb-item active">Create</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+    
+           
+
+                <div class="card" style="width:120%;align-content:center">
+                    <div class="card-body" style="align-self:center;align-items:center;width:90%">
+                        <h5 class="card-title">Create</h5>
+
+
+                        <h4>SURVIEILLANCE</h4>
+                        <hr />
+                              
+                                <form asp-action="Create">
+                                    <div class="float-lg-left">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-group">
+                                        <label asp-for="Code" class="control-label"></label>
+                                        <input asp-for="Code" class="form-control" />
+                                        <span asp-validation-for="Code" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Model" class="control-label"></label>
+                                        <input asp-for="Model" class="form-control" />
+                                        <span asp-validation-for="Model" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Type" class="control-label"></label>
+                                        <input asp-for="Type" class="form-control" />
+                                        <span asp-validation-for="Type" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Serial_Number" class="control-label"></label>
+                                        <input asp-for="Serial_Number" class="form-control" />
+                                        <span asp-validation-for="Serial_Number" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Internail_Ip" class="control-label"></label>
+                                        <input asp-for="Internail_Ip" class="form-control" />
+                                        <span asp-validation-for="Internail_Ip" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Externail_IP" class="control-label"></label>
+                                        <input asp-for="Externail_IP" class="form-control" />
+                                        <span asp-validation-for="Externail_IP" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Port_number" class="control-label"></label>
+                                        <input asp-for="Port_number" class="form-control" />
+                                        <span asp-validation-for="Port_number" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="DVR_NVR_MODEL" class="control-label"></label>
+                                        <input asp-for="DVR_NVR_MODEL" class="form-control" />
+                                        <span asp-validation-for="DVR_NVR_MODEL" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="NUMBER_OF_CHANNEL" class="control-label"></label>
+                                        <input asp-for="NUMBER_OF_CHANNEL" class="form-control" />
+                                        <span asp-validation-for="NUMBER_OF_CHANNEL" class="text-danger"></span>
+                                    </div>
+                                   
+                                   
+                                    <div class="form-group">
+                                        <label asp-for="USED_CHANNEL" class="control-label"></label>
+                                        <input asp-for="USED_CHANNEL" class="form-control" />
+                                        <span asp-validation-for="USED_CHANNEL" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="float-right">
+                                    <div class="form-group">
+                                        <label asp-for="CONECTIVETY_TYPE" class="control-label"></label>
+                                        <input asp-for="CONECTIVETY_TYPE" class="form-control" />
+                                        <span asp-validation-for="CONECTIVETY_TYPE" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="STORAGE" class="control-label"></label>
+                                        <input asp-for="STORAGE" class="form-control" />
+                                        <span asp-validation-for="STORAGE" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="USER_LOGIN" class="control-label"></label>
+                                        <input asp-for="USER_LOGIN" class="form-control" />
+                                        <span asp-validation-for="USER_LOGIN" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="PASSWORD" class="control-label"></label>
+                                        <input asp-for="PASSWORD" class="form-control" />
+                                        <span asp-validation-for="PASSWORD" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="VERIFICATION_CODE" class="control-label"></label>
+                                        <input asp-for="VERIFICATION_CODE" class="form-control" />
+                                        <span asp-validation-for="VERIFICATION_CODE" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" asp-for="is_warehouse" /> @Html.DisplayNameFor(model => model.is_warehouse)
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Note" class="control-label"></label>
+                                        <textarea asp-for="Note" class="form-control" ></textarea>
+                                        <span asp-validation-for="Note" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Branch</label>
+                                        <select asp-for="BRANCH_ID" class="form-control" asp-items="ViewBag.BRANCH_ID"></select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">WAREHOUSE STOCK FOR CAMRA&DVR</label>
+                            <select asp-for="WAREHOUSE_STOCK_FOR_CAMRA_DVR_ID" class="form-control" asp-items="ViewBag.WAREHOUSE_STOCK_FOR_CAMRA_DVR_ID" ></select>
+                            <span asp-validation-for="WAREHOUSE_STOCK_FOR_CAMRA_DVR_ID" class="text-danger" ></span>
+                                    </div>
+                                    <div class="form-group" >
+                            <input type="submit" value="Create" class="btn btn-sim btn btn-outline-primary" style="margin-top:0.5cm " />
+                            <a asp-action="Index" class="btn btn-sim btn btn-outline-dark" style="margin-top:0.5cm">Back to List</a>
+                                    </div>
+                                    </div>
+                                </form>
+                            
+ 
+                    </div>
+                </div>
+          
+
+         
+    </section>
+
+</main><!-- End #main -->
